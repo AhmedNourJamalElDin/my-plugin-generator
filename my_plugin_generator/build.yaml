@@ -1,0 +1,14 @@
+builders:
+  see_me_builder:
+    import: "package:my_plugin_generator/see_me_builder.dart"
+    builder_factories: [ "seeMeBuilder" ]
+    build_extensions: { ".dart": [ ".my_plugin.json" ] }
+    auto_apply: dependents
+    runs_before: [ "my_plugin_generator|see_me_scanner_builder" ]
+    build_to: cache
+  see_me_scanner_builder:
+    import: "package:my_plugin_generator/see_me_scanner_builder.dart"
+    builder_factories: [ "seeMeScannerBuilder" ]
+    build_extensions: { ".dart": [ ".my_plugin.g.dart" ] }
+    auto_apply: dependents
+    build_to: source

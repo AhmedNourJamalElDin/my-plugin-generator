@@ -1,0 +1,3 @@
+class SeeMe {
+  const SeeMe();
+}
